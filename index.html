@@ -3,56 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apply: REACH Cohort 001</title>
+  <title>Apply for REACH Cohort 001</title>
   <style>
-    /* center everything */
-    body {
+    /* make the page fill one screen and center the box */
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #f9f9f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      background: #f9f9f9;
     }
 
-    /* container around your embed */
-    .form-container {
-      width: 100%;
-      max-width: 800px;      /* tweak this for your desired width */
-      height: 90vh;          /* so there's room to scroll */
+    /* constrain the form container */
+    .form-wrapper {
+      width: 95%;             /* up to 95% of the viewport on small screens */
+      max-width: 900px;       /* now much wider */
+      height: 90vh;           /* almost full viewport height */
       background: #fff;
       border-radius: 8px;
-      overflow: hidden;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      overflow: hidden;       /* hide overflow on wrapper */
     }
 
-    /* force the embedded iframe to fill the container */
-    .form-container .tally-embed,
-    .form-container .tally-embed iframe {
+    /* make iframe fill the wrapper and scroll internally */
+    .form-wrapper iframe {
       width: 100%;
       height: 100%;
-      border: none;
-    }
-
-    /* hide “Made with Tally” badge */
-    .form-container .tally-embed > div {
-      display: none !important;
+      border: 0;
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <!--
-      Embed code from Tally.
-      data-tally-url is your form link;
-      data-tally-redirect-url is where to go on submit.
-    -->
-    <div
-      class="tally-embed"
-      data-tally-url="https://tally.so/r/3jAyBE"
-      data-tally-redirect-url="./thank-you.html"
-    ></div>
-    <script src="https://tally.so/widgets/embed.js"></script>
+  <div class="form-wrapper">
+    <!-- redirectOnSubmit=thank-you.html will send folks to thank-you.html -->
+    <iframe
+      src="https://tally.so/r/3jAyBE?redirectOnSubmit=thank-you.html"
+      scrolling="yes"
+    ></iframe>
   </div>
 </body>
 </html>
