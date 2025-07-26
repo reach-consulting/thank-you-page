@@ -4,50 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apply: REACH Cohort 001</title>
-
-  <!-- your global styles… -->
   <style>
+    /* center everything */
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
-      box-sizing: border-box;
+      height: 100vh;
+      background: #f9f9f9;
     }
 
+    /* container around your embed */
     .form-container {
       width: 100%;
-      max-width: 800px;           /* ← bump this up or down to control the form’s width */
-      height: 90vh;               /* almost-full-height so the form can scroll */
+      max-width: 800px;      /* tweak this for your desired width */
+      height: 90vh;          /* so there's room to scroll */
       background: #fff;
       border-radius: 8px;
-      overflow: auto;             /* allow inner scrolling */
+      overflow: hidden;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      padding: 32px;
-      box-sizing: border-box;
     }
 
-    /* Tally embed sits inside a div.tally-embed, then injects an <iframe> *and* a footer badge.
-       This rule hides that footer completely. */
-    .form-container .tally-embed iframe + div {
+    /* force the embedded iframe to fill the container */
+    .form-container .tally-embed,
+    .form-container .tally-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* hide “Made with Tally” badge */
+    .form-container .tally-embed > div {
       display: none !important;
     }
   </style>
 </head>
 <body>
   <div class="form-container">
-    <!-- Tally’s embed code: -->
+    <!--
+      Embed code from Tally.
+      data-tally-url is your form link;
+      data-tally-redirect-url is where to go on submit.
+    -->
     <div
       class="tally-embed"
       data-tally-url="https://tally.so/r/3jAyBE"
-      data-tally-auto-close="3000"
-      data-tally-iframe-title="REACH Cohort 001 Application">
-    </div>
+      data-tally-redirect-url="./thank-you.html"
+    ></div>
     <script src="https://tally.so/widgets/embed.js"></script>
   </div>
 </body>
