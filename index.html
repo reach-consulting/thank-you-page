@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apply for REACH Cohort 001</title>
   <style>
-    /* make the page fill one screen and center the box */
     html, body {
       margin: 0;
       padding: 0;
@@ -16,18 +15,16 @@
       justify-content: center;
     }
 
-    /* constrain the form container */
     .form-wrapper {
-      width: 95%;             /* up to 95% of the viewport on small screens */
-      max-width: 900px;       /* now much wider */
-      height: 90vh;           /* almost full viewport height */
+      width: 95%;            /* narrow devices still get 95% */
+      max-width: 1200px;     /* now up to 1200px wide */
+      height: 90vh;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      overflow: hidden;       /* hide overflow on wrapper */
+      overflow: hidden;
     }
 
-    /* make iframe fill the wrapper and scroll internally */
     .form-wrapper iframe {
       width: 100%;
       height: 100%;
@@ -37,7 +34,6 @@
 </head>
 <body>
   <div class="form-wrapper">
-    <!-- redirectOnSubmit=thank-you.html will send folks to thank-you.html -->
     <iframe
       src="https://tally.so/r/3jAyBE?redirectOnSubmit=thank-you.html"
       scrolling="yes"
