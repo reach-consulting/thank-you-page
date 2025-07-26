@@ -25,10 +25,6 @@
       padding: 40px 20px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
-    .logo {
-      width: 80px;
-      margin-bottom: 24px;
-    }
     h1 {
       margin: 0 0 16px;
       font-size: 1.6rem;
@@ -39,6 +35,10 @@
       line-height: 1.5;
       color: #555;
     }
+    /* prevent wrapping inside the cohort name */
+    .nowrap {
+      white-space: nowrap;
+    }
     footer {
       margin-top: 32px;
       font-size: 0.85rem;
@@ -48,14 +48,12 @@
 </head>
 <body>
   <div class="container">
-    <img src="2.png" alt="Reach Consulting logo" class="logo" />
-
     <h1>Thank you for applying!</h1>
     <p>
-      We’ve received your submission for <strong>REACH Cohort 001</strong>.<br>
+      We’ve received your submission for 
+      <span class="nowrap"><strong>REACH Cohort 001</strong></span>.<br>
       Our team reviews every application carefully and will be in touch within 48 hours if you’re selected.
     </p>
-
     <footer>© 2025 REACH Consulting. All rights reserved.</footer>
   </div>
 </body>
